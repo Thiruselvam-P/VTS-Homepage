@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+/* Theme Utilities */
+.text-orange {
+    color: #ff6b00 !important;
+}
+
+.bg-orange {
+    background-color: #ff6b00 !important;
+}
+
+.btn-orange {
+    background-color: #ff6b00 !important;
+    border: none !important;
+    color: #000000 !important;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #e65c00 !important;
+        color: #000000 !important;
+        box-shadow: 0 4px 20px rgba(255, 107, 0, 0.5);
+        transform: translateY(-2px);
+    }
+}
+
+.btn-outline-orange {
+    background-color: transparent !important;
+    border: 2px solid #ff6b00 !important;
+    color: #ff6b00 !important;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #ff6b00 !important;
+        color: #000000 !important;
+        box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
+        transform: translateY(-2px);
+    }
+}
+
+.bg-deep-black {
+    background-color: #000000 !important;
+}
+
+.bg-soft-black {
+    background-color: #080808 !important;
+}
