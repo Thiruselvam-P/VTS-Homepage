@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import * as AOS from 'aos';
 
 
 @Component({
@@ -10,6 +11,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './dashboard.component.scss'
 })
 
-export class DashboardComponent {
-
+export class DashboardComponent implements OnInit {
+  ngOnInit() {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true
+    });
+  }
 }
