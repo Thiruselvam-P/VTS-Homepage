@@ -1,32 +1,25 @@
 /* =====================================
-   FULL SCREEN BACKGROUND IMAGE
+   FULL SCREEN CONTAINER
 ===================================== */
 .container-fluid {
   position: relative;
-  /* IMPORTANT for overlay */
   height: 729px;
   width: 100%;
   overflow: hidden;
-
-  /* Background Image moved to ::after for animation */
 }
 
 /* =====================================
-   BACKGROUND ANIMATION LAYER
+   BACKGROUND IMAGE (Static Now)
 ===================================== */
-.container-fluid::after {
-  content: "";
+.bg-image {
   position: absolute;
   inset: 0;
-
-  background-image: url("/lg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
-  /* Base Layer */
-  animation: kenBurns 25s ease-in-out infinite alternate;
+
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* =====================================
@@ -38,14 +31,12 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.25);
   z-index: 1;
-  /* Above animated background */
 }
 
 /* Ensure content above overlay */
 .row {
   position: relative;
   z-index: 2;
-  /* Above overlay */
 }
 
 /* =====================================
@@ -80,13 +71,11 @@
   transition: 0.3s ease;
 }
 
-/* Placeholder */
 .custom-input::placeholder,
 .form-control::placeholder {
   color: rgba(255, 255, 255, 0.65);
 }
 
-/* Focus Effect */
 .custom-input:focus,
 .form-control:focus {
   background: rgba(255, 255, 255, 0.18);
@@ -121,13 +110,13 @@
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
+}
 
-  &:hover {
-    background-color: #e65c00;
-    border-color: #e65c00;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
-  }
+.btn-primary:hover {
+  background-color: #e65c00;
+  border-color: #e65c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
 }
 
 .btn-primary:active {
@@ -144,7 +133,7 @@
   margin-top: 15px;
 
   opacity: 0;
-  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: fadeInUp 0.6s ease forwards;
   animation-delay: 0.9s;
 }
 
@@ -156,11 +145,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  will-change: transform;
 }
 
 .truck-wrapper.move {
-  animation: driveTruck 2.2s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation: driveTruck 2.2s ease forwards;
 }
 
 @keyframes driveTruck {
@@ -181,12 +169,8 @@
 }
 
 /* =====================================
-   COMPANY LOGO
+   LOGO
 ===================================== */
-.company-logo {
-  text-align: center;
-}
-
 .logo-img {
   max-width: 250px;
   height: auto;
@@ -195,69 +179,20 @@
 }
 
 /* =====================================
-   ADDITIONAL ANIMATIONS
+   ANIMATIONS
 ===================================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 30px, 0);
+    transform: translateY(30px);
   }
-
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 
 @keyframes floatLogo {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-/* Staggered Form Animations */
-.login-card .text-center {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.3s;
-}
-
-form>div:nth-of-type(1) {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.5s;
-}
-
-form>div:nth-of-type(2) {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.6s;
-}
-
-form>div:nth-of-type(3) {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.7s;
-}
-
-form>button {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.8s;
-}
-
-@keyframes kenBurns {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.15);
-  }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
