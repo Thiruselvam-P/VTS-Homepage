@@ -1,16 +1,13 @@
 <div class="container-fluid p-0">
-
   <!-- Background Image -->
-  <img src="/login.png" class="bg-image" alt="Login Background" />
+  <img src="login.png" class="bg-image" alt="Login Background" />
 
   <div class="row g-0 h-100">
-
     <!-- LEFT SIDE (Login Card) -->
     <div
       class="col-lg-6 right-side d-flex align-items-center justify-content-center"
     >
       <div class="card login-card border-0 p-5">
-
         <!-- Title Section -->
         <div class="text-center mb-4">
           <div class="company-logo mt-2">
@@ -21,12 +18,16 @@
               style="max-height: 100px"
             />
           </div>
-          <h3 class="fw-bold text-warning">Vehicle Tracking System</h3>
+          <h3
+            class="fw-bold text-warning"
+            style="font-family: &quot;Poppins&quot;, sans-serif"
+          >
+            Vehicle Tracking System
+          </h3>
         </div>
 
         <!-- Login Form -->
         <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-
           <!-- Username -->
           <div class="mb-4">
             <label class="form-label text-light small">Username</label>
@@ -55,7 +56,8 @@
             <span class="password-toggle" (click)="togglePassword()">
               <i
                 class="bi"
-                [ngClass]="showPassword ? 'bi-eye-slash-fill' : 'bi-eye-fill'">
+                [ngClass]="showPassword ? 'bi-eye-slash-fill' : 'bi-eye-fill'"
+              >
               </i>
             </span>
           </div>
@@ -70,7 +72,8 @@
           <!-- Sign In Button -->
           <button
             class="btn btn-primary w-100 py-2"
-            [disabled]="!loginForm.valid">
+            [disabled]="!loginForm.valid"
+          >
             Sign In
           </button>
 
@@ -84,7 +87,6 @@
               <div class="wheel wheel-back"></div>
             </div>
           </div>
-
         </form>
       </div>
     </div>
@@ -92,9 +94,8 @@
     <!-- RIGHT SIDE -->
     <div class="col-lg-6 left-side d-none d-lg-block">
       <div
-        class="overlay-left d-flex align-items-center justify-content-center text-white text-center">
-      </div>
+        class="overlay-left d-flex align-items-center justify-content-center text-white text-center"
+      ></div>
     </div>
-
   </div>
 </div>
